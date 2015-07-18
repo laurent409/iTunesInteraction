@@ -17,18 +17,18 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="VHA-WZ-3iY">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="16" y="20" width="568" height="572"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="gBK-sy-p6K"/>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="IRB-Fq-h4w"/>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="FNH-fw-MAL"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="lD7-SZ-Rxg"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="tableViewViewController" destination="VHA-WZ-3iY" id="dgY-qd-vgh"/>
+                        <outlet property="appsTableView" destination="VHA-WZ-3iY" id="fyn-r2-gz5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

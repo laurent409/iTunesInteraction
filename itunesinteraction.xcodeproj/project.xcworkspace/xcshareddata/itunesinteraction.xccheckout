@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>373AE9CA-AA8F-43FB-BABC-255BF1EF3892</string>
+	<key>IDESourceControlProjectName</key>
+	<string>itunesinteraction</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3E4D0D74C779A672A8AF13FFF3DA695713EC56F2</key>
+		<string>https://github.com/laurent409/iTunesInteraction.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>itunesinteraction.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3E4D0D74C779A672A8AF13FFF3DA695713EC56F2</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/laurent409/iTunesInteraction.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3E4D0D74C779A672A8AF13FFF3DA695713EC56F2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3E4D0D74C779A672A8AF13FFF3DA695713EC56F2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>itunesinteraction</string>
+		</dict>
+	</array>
+</dict>
+</plist>

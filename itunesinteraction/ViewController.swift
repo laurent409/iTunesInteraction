@@ -35,6 +35,45 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
+    func searchItunesFor(searchTerm: String) {
+        
+        //Replace spaces (" ") by "+" because iTunes ask for multiples requests
+        let itunesSearchTerm = searchTerm.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
+        
+        //Enscape all URL which not friendly
+        let escapedSearchTerm = itunesSearchTerm.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
+        
+        let urlPath = "https://itunes.apple.com/search?term=\(escapedSearchTerm)&media=software"
+        let url: NSURL = NSURL(string: urlPath)!
+        
+        let session = NSURLSession.sharedSession()
+        
+        let task = session.dataTaskWithURL(url, completionHandler: { data, response, error -> Void in println("Task Completed !")
+            
+            if ((error) != nil) {
+                println(error.localizedDescription)
+            }
+            
+            var err: NSError?
+            
+            var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as! NSDictionary
+            
+            if ( (err) != nil ) {
+                
+                println("JSON error : \(err!.localizedDescription)")
+            }
+            
+            let results: NSArray = jsonResult["results"] as! NSArray
+            dispatch_async(dispatch_get_main_queue(), {
+                self.tableData = results
+                self.appsTableView!.reloadData()
+            })
+            
+        })
+        
+        task.resume()
+    }
+    
 
 }
 

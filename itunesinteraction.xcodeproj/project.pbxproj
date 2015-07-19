@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4DB1395C1B5C217400078D7F /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB1395B1B5C217400078D7F /* APIController.swift */; };
 		4DE2C96D1B5AEB980065E80B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE2C96C1B5AEB980065E80B /* AppDelegate.swift */; };
-		4DE2C96F1B5AEB980065E80B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE2C96E1B5AEB980065E80B /* ViewController.swift */; };
+		4DE2C96F1B5AEB980065E80B /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE2C96E1B5AEB980065E80B /* SearchResultsViewController.swift */; };
 		4DE2C9721B5AEB980065E80B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DE2C9701B5AEB980065E80B /* Main.storyboard */; };
 		4DE2C9741B5AEB980065E80B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE2C9731B5AEB980065E80B /* Images.xcassets */; };
 		4DE2C9771B5AEB980065E80B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DE2C9751B5AEB980065E80B /* LaunchScreen.xib */; };
@@ -26,10 +27,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4DB1395B1B5C217400078D7F /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIController.swift; path = ../APIController.swift; sourceTree = "<group>"; };
 		4DE2C9671B5AEB980065E80B /* itunesinteraction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = itunesinteraction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DE2C96B1B5AEB980065E80B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DE2C96C1B5AEB980065E80B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4DE2C96E1B5AEB980065E80B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4DE2C96E1B5AEB980065E80B /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		4DE2C9711B5AEB980065E80B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DE2C9731B5AEB980065E80B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4DE2C9761B5AEB980065E80B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -77,8 +79,9 @@
 		4DE2C9691B5AEB980065E80B /* itunesinteraction */ = {
 			isa = PBXGroup;
 			children = (
+				4DB1395B1B5C217400078D7F /* APIController.swift */,
 				4DE2C96C1B5AEB980065E80B /* AppDelegate.swift */,
-				4DE2C96E1B5AEB980065E80B /* ViewController.swift */,
+				4DE2C96E1B5AEB980065E80B /* SearchResultsViewController.swift */,
 				4DE2C9701B5AEB980065E80B /* Main.storyboard */,
 				4DE2C9731B5AEB980065E80B /* Images.xcassets */,
 				4DE2C9751B5AEB980065E80B /* LaunchScreen.xib */,
@@ -212,8 +215,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DE2C96F1B5AEB980065E80B /* ViewController.swift in Sources */,
+				4DE2C96F1B5AEB980065E80B /* SearchResultsViewController.swift in Sources */,
 				4DE2C96D1B5AEB980065E80B /* AppDelegate.swift in Sources */,
+				4DB1395C1B5C217400078D7F /* APIController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +413,7 @@
 				4DE2C9881B5AEB980065E80B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4DE2C9891B5AEB980065E80B /* Build configuration list for PBXNativeTarget "itunesinteractionTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				4DE2C98B1B5AEB980065E80B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -10,9 +10,13 @@ import UIKit
 
 class SearchResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, APIControllerProtocol {
     
+    @IBOutlet var appsTableView : UITableView?
+    
     var api = APIController()
     var tableData = []
-    @IBOutlet var appsTableView : UITableView?
+    var imageCache = [String: UIImage]()
+    
+    let kCellIdentifier: String = "SearchResultCell"
     
     override func viewDidLoad() {
         
@@ -35,7 +39,8 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MyTestCell")
+//        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MyTestCell")
+        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as! UITableViewCell
         let rowData: NSDictionary = self.tableData[indexPath.row] as! NSDictionary
         cell.textLabel!.text = rowData["trackName"] as? String
         
@@ -61,6 +66,19 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
             self.tableData = resultsArray
             self.appsTableView?.reloadData()
         })
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var rowData: NSDictionary = self.tableData[indexPath.row] as! NSDictionary
+        
+        var name: String = rowData["trackName"] as! String
+        var formattedPrice: String = rowData["formattedPrice"] as! String
+        
+        var alert: UIAlertView = UIAlertView()
+        alert.title = name
+        alert.message = formattedPrice
+        alert.addButtonWithTitle("OK")
+        alert.show()
     }
 
 }

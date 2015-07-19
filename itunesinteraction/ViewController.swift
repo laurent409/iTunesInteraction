@@ -16,6 +16,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //Begin the iTunes answer seek when we ask it
+        searchItunesFor("JQ Software")
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,14 +28,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return tableData.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MyTestCell")
-        cell.textLabel!.text = "Ligne #\(indexPath.row)"
-        cell.detailTextLabel?.text = "Subtitles #\(indexPath.row)"
+        let rowData: NSDictionary = self.tableData[indexPath.row] as! NSDictionary
+        cell.textLabel!.text = rowData["trackName"] as? String
         
+        //Take artworkUrl60 key for getting image URL for the application miniature
+        let urlString: NSString = rowData["artworkUrl60"] as! NSString
+        let imgUrl: NSURL = NSURL(string: urlString as String)!
+        
+        //NSData representation of this URL image
+        let imgData: NSData = NSData(contentsOfURL: imgUrl)!
+        cell.imageView?.image = UIImage(data: imgData)
+        
+        //Get price as formatted string for displaying in the subtitle
+        let formattedPrice: NSString = rowData["formattedPrice"] as! NSString
+        
+        cell.detailTextLabel!.text = formattedPrice as String
+
         return cell
     }
     
@@ -42,12 +59,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         //Enscape all URL which not friendly
         let escapedSearchTerm = itunesSearchTerm.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
+
+        //Present an URL for API
+//        let urlPath = "https://itunes.apple.com/search?term=\(escapedSearchTerm)&media=software"
+        let firstPartUrl = "https://itunes.apple.com/search?term="
+        let secondPartUrl = "&media=software"
+        let urlPath = firstPartUrl + escapedSearchTerm! + secondPartUrl
+        let urlString: NSString = urlPath as NSString
         
-        let urlPath = "https://itunes.apple.com/search?term=\(escapedSearchTerm)&media=software"
-        let url: NSURL = NSURL(string: urlPath)!
+        let url = NSURL(string: urlPath)!
         
+        //Get default session
         let session = NSURLSession.sharedSession()
         
+        //Create connection task
         let task = session.dataTaskWithURL(url, completionHandler: { data, response, error -> Void in println("Task Completed !")
             
             if ((error) != nil) {
@@ -64,6 +89,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
             
             let results: NSArray = jsonResult["results"] as! NSArray
+            
+            //Update UI, Come back to the thread, Reload the table view
             dispatch_async(dispatch_get_main_queue(), {
                 self.tableData = results
                 self.appsTableView!.reloadData()
@@ -71,6 +98,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
         })
         
+        //Begin request
         task.resume()
     }
     

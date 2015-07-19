@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SearchResultsViewController.swift
 //  itunesinteraction
 //
 //  Created by Laurent Philibert on 18/07/2015.

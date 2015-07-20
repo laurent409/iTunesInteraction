@@ -12,6 +12,8 @@
 	<dict>
 		<key>3E4D0D74C779A672A8AF13FFF3DA695713EC56F2</key>
 		<string>https://github.com/laurent409/iTunesInteraction.git</string>
+		<key>6160FC6D590399BEC8974FAD5086166E340F3D37</key>
+		<string>https://github.com/jquave/Swift-Tutorial.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>itunesinteraction.xcodeproj</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>3E4D0D74C779A672A8AF13FFF3DA695713EC56F2</key>
 		<string>../..</string>
+		<key>6160FC6D590399BEC8974FAD5086166E340F3D37</key>
+		<string>../../../Swift-Tutorial</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/laurent409/iTunesInteraction.git</string>
@@ -35,6 +39,14 @@
 			<string>3E4D0D74C779A672A8AF13FFF3DA695713EC56F2</string>
 			<key>IDESourceControlWCCName</key>
 			<string>itunesinteraction</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6160FC6D590399BEC8974FAD5086166E340F3D37</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Swift-Tutorial</string>
 		</dict>
 	</array>
 </dict>

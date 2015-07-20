@@ -14,9 +14,11 @@ protocol APIControllerProtocol {
 
 class APIController {
     
-    var delegate: APIControllerProtocol?
+    var delegate: APIControllerProtocol
     
-    init(){ }
+    init(delegate: APIControllerProtocol){
+        self.delegate = delegate
+    }
     
     func searchItunesFor(searchTerm: String) {
         
@@ -29,7 +31,7 @@ class APIController {
         //Present an URL for API
         //        let urlPath = "https://itunes.apple.com/search?term=\(escapedSearchTerm)&media=software"
         let firstPartUrl = "https://itunes.apple.com/search?term="
-        let secondPartUrl = "&media=software"
+        let secondPartUrl = "&media=music&entity=album"
         let urlPath = firstPartUrl + escapedSearchTerm! + secondPartUrl
         let urlString: NSString = urlPath as NSString
         let url = NSURL(string: urlPath)!
@@ -50,7 +52,7 @@ class APIController {
                 println("JSON error : \(err!.localizedDescription)")
             }
             let results: NSArray = jsonResult["results"] as! NSArray
-            self.delegate?.didReceiveAPIResults(jsonResult)
+            self.delegate.didReceiveAPIResults(jsonResult)
             
             //Update UI, Come back to the thread, Reload the table view
             dispatch_async(dispatch_get_main_queue(), {

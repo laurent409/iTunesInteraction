@@ -9,7 +9,7 @@
 import Foundation
 
 protocol APIControllerProtocol {
-    func didReceiveAPIResults(results: NSDictionary)
+    func didReceiveAPIResults(results: NSArray)
 }
 
 class APIController {
@@ -52,7 +52,7 @@ class APIController {
                 println("JSON error : \(err!.localizedDescription)")
             }
             let results: NSArray = jsonResult["results"] as! NSArray
-            self.delegate.didReceiveAPIResults(jsonResult)
+            self.delegate.didReceiveAPIResults(results)
             
             //Update UI, Come back to the thread, Reload the table view
             dispatch_async(dispatch_get_main_queue(), {

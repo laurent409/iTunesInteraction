@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, APIControllerProtocol {
+class SearchResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, APIControllerProtocol  {
     
     @IBOutlet var appsTableView : UITableView?
     
@@ -92,18 +92,18 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         })
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var rowData: NSDictionary = self.albums[indexPath.row] as! NSDictionary
-        
-        var name: String = rowData["trackName"] as! String
-        var formattedPrice: String = rowData["formattedPrice"] as! String
-        
-        var alert: UIAlertView = UIAlertView()
-        alert.title = name
-        alert.message = formattedPrice
-        alert.addButtonWithTitle("OK")
-        alert.show()
-    }
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        var rowData: NSDictionary = self.albums[indexPath.row] as! NSDictionary
+//        
+//        var name: String = rowData["trackName"] as! String
+//        var formattedPrice: String = rowData["formattedPrice"] as! String
+//        
+//        var alert: UIAlertView = UIAlertView()
+//        alert.title = name
+//        alert.message = formattedPrice
+//        alert.addButtonWithTitle("OK")
+//        alert.show()
+//    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let detailsViewController: DetailsViewController = segue.destinationViewController as? DetailsViewController {

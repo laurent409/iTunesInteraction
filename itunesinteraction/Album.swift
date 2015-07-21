@@ -28,7 +28,7 @@ struct Album {
     
     static func albumsWithJson(results: NSArray) -> [Album] {
         var albums = [Album]()
-        if (results.count >0) {
+        if results.count>0 {
             for results in results {
                 var name = results["trackName"] as? String
                 if name == nil {
@@ -57,7 +57,7 @@ struct Album {
                     itemUrl = results["trackViewUrl"] as? String
                 }
                 
-                var newAlbum = Album(title: name!, price: price!, thumbnailImageUrl: thumbnailUrl!, largeImageUrl: imageUrl!, itemUrl: itemUrl!, artistUrl: artistUrl!)
+                var newAlbum = Album(title: name!, price: price!, thumbnailImageUrl: thumbnailUrl, largeImageUrl: imageUrl, itemUrl: itemUrl!, artistUrl: artistUrl)
                 albums.append(newAlbum)
                 
             }

@@ -11,6 +11,7 @@
 		4DB1395E1B5C57B500078D7F /* Blank52.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1395D1B5C57B500078D7F /* Blank52.png */; };
 		4DB139601B5D932E00078D7F /* Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1395F1B5D932E00078D7F /* Background.jpg */; };
 		4DB139621B5D961B00078D7F /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB139611B5D961B00078D7F /* Album.swift */; };
+		4DB139641B5EDC1800078D7F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB139631B5EDC1800078D7F /* DetailsViewController.swift */; };
 		4DE2C96D1B5AEB980065E80B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE2C96C1B5AEB980065E80B /* AppDelegate.swift */; };
 		4DE2C96F1B5AEB980065E80B /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE2C96E1B5AEB980065E80B /* SearchResultsViewController.swift */; };
 		4DE2C9721B5AEB980065E80B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DE2C9701B5AEB980065E80B /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		4DB1395D1B5C57B500078D7F /* Blank52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Blank52.png; path = "../../Swift-Tutorial/MusicPlayer/Blank52.png"; sourceTree = "<group>"; };
 		4DB1395F1B5D932E00078D7F /* Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Background.jpg; path = ../../../../Downloads/Background.jpg; sourceTree = "<group>"; };
 		4DB139611B5D961B00078D7F /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		4DB139631B5EDC1800078D7F /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		4DE2C9671B5AEB980065E80B /* itunesinteraction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = itunesinteraction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DE2C96B1B5AEB980065E80B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DE2C96C1B5AEB980065E80B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				4DB139611B5D961B00078D7F /* Album.swift */,
 				4DB1395B1B5C217400078D7F /* APIController.swift */,
 				4DE2C96C1B5AEB980065E80B /* AppDelegate.swift */,
+				4DB139631B5EDC1800078D7F /* DetailsViewController.swift */,
 				4DE2C96E1B5AEB980065E80B /* SearchResultsViewController.swift */,
 				4DB1395D1B5C57B500078D7F /* Blank52.png */,
 				4DB1395F1B5D932E00078D7F /* Background.jpg */,
@@ -230,6 +233,7 @@
 				4DE2C96D1B5AEB980065E80B /* AppDelegate.swift in Sources */,
 				4DB1395C1B5C217400078D7F /* APIController.swift in Sources */,
 				4DB139621B5D961B00078D7F /* Album.swift in Sources */,
+				4DB139641B5EDC1800078D7F /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

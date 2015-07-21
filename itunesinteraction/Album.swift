@@ -27,6 +27,41 @@ struct Album {
     }
     
     static func albumsWithJson(results: NSArray) -> [Album] {
-        //code here for albumsWithJson method
+        var albums = [Album]()
+        if (results.count >0) {
+            for results in results {
+                var name = results["trackName"] as? String
+                if name == nil {
+                    name = results["collectionName"] as? String
+                }
+                
+                var price = results["formattedPrice"] as? String
+                if price == nil {
+                    price = results["collectionPrice"] as? String
+                    if price == nil {
+                        var priceFloat: Float? = results["collectionPrice"] as? Float
+                        var nf: NSNumberFormatter = NSNumberFormatter()
+                        nf.maximumFractionDigits = 2
+                        if priceFloat != nil {
+                            price = "$\(nf.stringFromNumber(priceFloat!)!)"
+                        }
+                    }
+                }
+                
+                let thumbnailUrl = results["artworkUrl60"] as? String ?? ""
+                let imageUrl = results["artworkUrl100"] as? String ?? ""
+                let artistUrl = results["artistViewUrl"] as? String ?? ""
+                
+                var itemUrl = results["collectionViewUrl"] as? String
+                if itemUrl == nil {
+                    itemUrl = results["trackViewUrl"] as? String
+                }
+                
+                var newAlbum = Album(title: name!, price: price!, thumbnailImageUrl: thumbnailUrl!, largeImageUrl: imageUrl!, itemUrl: itemUrl!, artistUrl: artistUrl!)
+                albums.append(newAlbum)
+                
+            }
+        }
+        return albums
     }
 }

@@ -39,6 +39,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="u7O-Ep-W4P" kind="show" id="L0d-7d-gPE"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -55,6 +58,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="66" y="345"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="4rR-py-FhH">
+            <objects>
+                <viewController id="u7O-Ep-W4P" customClass="DetailsViewController" customModule="itunesinteraction" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3YX-nU-8Rw"/>
+                        <viewControllerLayoutGuide type="bottom" id="bTr-5P-0MW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YoC-oH-8J4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6C4-hh-iOU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="796" y="345"/>
         </scene>
     </scenes>
 </document>

@@ -71,73 +71,16 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
                     dispatch_async(dispatch_get_main_queue(), {
                         if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) {
                             cellToUpdate.imageView?.image = image
-
                         }
-                        
                     })
-                    
                 } else {
                     println("Error: \(error.localizedDescription)")
                 }
             })
-            
         }
-        
         return cell
     }
     
-        //Take artworkUrl60 key for getting image URL for the application miniature
-//        let urlString: NSString = rowData["artworkUrl60"] as! NSString
-//        let urlString = rowData["artworkUrl60"] as! String
-//        
-//        var image = self.imageCache[urlString]
-//        
-//        let thumbnailUrlString = album.thumbnailImageURL
-//        let thumbnailUrl = NSURL(string: thumbnailUrlString)!
-//
-//        
-//        if ( image == nil ) {
-//            
-//            //If image doesn't exist, download it
-//            let imgUrl: NSURL = NSURL(string: urlString as String)!
-//            //Download a NSDATA about URL image
-//            let request: NSURLRequest = NSURLRequest(URL: imgUrl)
-//            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-//                if !(error != nil) {
-//                    image = UIImage(data: data)
-//                    
-//                    //Store image in cache
-//                    self.imageCache[urlString] = image
-//                    
-////                    if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath)  {
-////                        cellToUpdate.imageView!.image = image
-////                    }
-//                    dispatch_async(dispatch_get_main_queue(), {
-//                        cell.imageView!.image = image
-//                    })
-//                } else {
-//                    println("Error: \(error.localizedDescription)")
-//                }
-//            })
-//            
-//            //NSData representation of this URL image
-////          let imgData: NSData = NSData(contentsOfURL: imgUrl)!
-////          cell.imageView?.image = UIImage(data: imgData)
-////        
-//        
-//        } else {
-//            dispatch_async(dispatch_get_main_queue(), {
-//                if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) {
-//                    cellToUpdate.imageView!.image = image
-//                }
-//                
-//            })
-//        }
-//        
-//        cell.detailTextLabel!.text = formattedPrice as String
-//
-//        return cell
-//    }
     
     func didReceiveAPIResults(results: NSArray) {
 //        var resultsArray: NSArray = results["results"] as! NSArray
@@ -150,7 +93,7 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var rowData: NSDictionary = self.tableData[indexPath.row] as! NSDictionary
+        var rowData: NSDictionary = self.albums[indexPath.row] as! NSDictionary
         
         var name: String = rowData["trackName"] as! String
         var formattedPrice: String = rowData["formattedPrice"] as! String

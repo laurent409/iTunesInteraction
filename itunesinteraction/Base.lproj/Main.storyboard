@@ -73,13 +73,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bou-co-9sF">
-                                <rect key="frame" x="16" y="20" width="135" height="133"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jAX-VO-5zA">
-                                <rect key="frame" x="16" y="20" width="135" height="133"/>
+                                <rect key="frame" x="16" y="66" width="135" height="133"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgJ-Vl-Ieh">
-                                <rect key="frame" x="159" y="20" width="425" height="133"/>
+                                <rect key="frame" x="16" y="28" width="568" height="30"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Label">
                                         <attributes>
@@ -91,19 +88,28 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Iqe-Cd-ECb">
+                                <rect key="frame" x="16" y="207" width="568" height="385"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="u7O-Ep-W4P" id="oJC-yD-81x"/>
+                                    <outlet property="delegate" destination="u7O-Ep-W4P" id="zsb-Wp-CYG"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="yGl-eN-DdL"/>
                     <connections>
-                        <outlet property="albumCover" destination="jAX-VO-5zA" id="r6z-aZ-jSw"/>
+                        <outlet property="albumCover" destination="bou-co-9sF" id="36v-Dm-QVc"/>
                         <outlet property="titleLabel" destination="lgJ-Vl-Ieh" id="ab7-kW-b68"/>
+                        <outlet property="tracksTableView" destination="Iqe-Cd-ECb" id="NQO-FX-lEn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6C4-hh-iOU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationItem title="Title" id="sUb-Cs-7e7"/>
             </objects>
-            <point key="canvasLocation" x="796" y="345"/>
+            <point key="canvasLocation" x="802" y="345"/>
         </scene>
     </scenes>
 </document>

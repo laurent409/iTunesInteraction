@@ -15,8 +15,9 @@ struct Album {
     let largeImageUrl: String
     let itemUrl: String
     let artistUrl: String
+    let collectionId: Int
     
-    init(title: String, price: String, thumbnailImageUrl: String, largeImageUrl: String, itemUrl: String, artistUrl: String) {
+    init(title: String, price: String, thumbnailImageUrl: String, largeImageUrl: String, itemUrl: String, artistUrl: String, collectionId: Int) {
         
         self.title = title
         self.price = price
@@ -24,6 +25,7 @@ struct Album {
         self.largeImageUrl = largeImageUrl
         self.itemUrl = itemUrl
         self.artistUrl = artistUrl
+        self.collectionId = collectionId
     }
     
     static func albumsWithJson(results: NSArray) -> [Album] {
@@ -57,8 +59,10 @@ struct Album {
                     itemUrl = results["trackViewUrl"] as? String
                 }
                 
-                var newAlbum = Album(title: name!, price: price!, thumbnailImageUrl: thumbnailUrl, largeImageUrl: imageUrl, itemUrl: itemUrl!, artistUrl: artistUrl)
-                albums.append(newAlbum)
+                if let collectionId = results["collectionId"] as? Int {
+                    var newAlbum = Album(title: name!, price: price!, thumbnailImageUrl: thumbnailUrl, largeImageUrl: imageUrl, itemUrl: itemUrl!, artistUrl: artistUrl, collectionId: collectionId)
+                    albums.append(newAlbum)
+                }
                 
             }
         }

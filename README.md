@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/laurent409/itunes-interaction.png?label=ready&title=Ready)](https://waffle.io/laurent409/itunes-interaction)
 # iTunes Interaction
 
 ### Details
